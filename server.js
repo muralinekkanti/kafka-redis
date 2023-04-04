@@ -57,6 +57,9 @@ const kafka = new Kafka({
     ssl: true,
 	sasl: {
       mechanism: sasl_mechanism, 
+      protocol: "TLSv1.2",
+      endpointIdentificationAlgorithm: "HTTPS",
+     // mechanism: "scram-sha-256",
 	  username: userName,
 	  password: password
 	},
