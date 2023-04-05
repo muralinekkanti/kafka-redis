@@ -20,12 +20,12 @@ COPY . /opt/app-root/src
 ENV NODE_ENV=development
 ENV CA_CERT_File_PATH="keyno-redis-cert.ca"
 # ENV REDIS_CONNECTION_STRING="xxxxx" supply through openshift or k8s deployment
-# ENV CLIENT_ID= "Kafka-Redis-App-1"
-# ENV TOPIC_NAME= "bank-a-topic-prod-1" 
+# ENV CLIENT_ID="Kafka-Redis-App-1"
+# ENV TOPIC_NAME="bank-a-topic-prod-1" 
 # ENV BROKERS="broker-0-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093,broker-1-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093,broker-4-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093,broker-5-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093,broker-3-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093,broker-2-hjpjsc2m0mhkwb6c.kafka.svc04.us-south.eventstreams.cloud.ibm.com:9093"
-ENV SASL_MECHANISM = "Plain"
+ENV SASL_MECHANISM="Plain"
 # ENV USER_NAME="token"
-# PASSWORD= "xxxxxx" supply through the openshift or k8s deployment
-ENV MESSAGES_FROM_BEGINING = true
+# PASSWORD="xxxxxx" supply through the openshift or k8s deployment
+ENV MESSAGES_FROM_BEGINING=true
 
 CMD ["npm", "start"]
