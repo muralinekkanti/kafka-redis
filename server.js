@@ -58,7 +58,7 @@ const kafka = new Kafka({
 	sasl: {
       mechanism: sasl_mechanism, 
       //protocol: "TLSv1.2",
-     // endpointIdentificationAlgorithm: "HTTPS",
+      //endpointIdentificationAlgorithm: "HTTPS",
      // mechanism: "scram-sha-256",
 	  username: userName,
 	  password: password
@@ -79,9 +79,10 @@ const consume = async () => {
 	await consumer.run({
 		
 		eachMessage: ({ message }) => {
-			
-            redisClient.hSet(message.key, message.value);
-			console.log(`received message Key: ${message.key} value:  ${message.value}`);
+
+      redisClient.hSet(message.key, JSON.parse(message.value));	
+      console.log(`received message Key: ${message.key} value:  ${message.value}`);		
+      //console.log("parse: "+JSON.parse(message.value))
 		},
 	})
 }
