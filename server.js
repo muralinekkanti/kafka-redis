@@ -80,8 +80,11 @@ const consume = async () => {
 		
 		eachMessage: ({ message }) => {
 
+      console.log(`received message Key: ${message.key} `);	
       redisClient.hSet(message.key, JSON.parse(message.value));	
-      console.log(`received message Key: ${message.key} value:  ${message.value}`);		
+      //console.log(`received message Key: ${message.key} value:  ${message.value}`);	
+      console.log(`inserted to Redis DB ..... `);	
+
       //console.log("parse: "+JSON.parse(message.value))
 		},
 	})
